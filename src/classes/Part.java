@@ -5,11 +5,11 @@ import interfaces.IParts;
 
 public class Part implements IParts
 {
-    private int idPart;
+    public int idPart;
     private String dsPart;
-    private String nmPart;
-    private ArrayList<SubPart> ListSubParts;
-    private String repoOrigin;
+    public String nmPart;
+    private ArrayList<SubPart> subPartsList;
+    public String repoOrigin;
 
     public void GetPartInfo()
     {
@@ -21,27 +21,22 @@ public class Part implements IParts
         System.out.println("\nNúmero de subpeças: " + this.GetSubPartNum());
     }
 
-    public void SetRepoOrigin(String repoOrigin)
-    {
-        this.repoOrigin = repoOrigin;
-    }
-
     public Boolean IsPrimitive()
     {
-        return this.ListSubParts.isEmpty() ? true : false;
+        return this.subPartsList.isEmpty() ? true : false;
     }
 
     public int GetSubPartNum()
     {
-        return this.ListSubParts.size();
+        return this.subPartsList.size();
     }
 
     public void ListSubParts()
     {
         int i = 1;
-        if (!ListSubParts.isEmpty())
+        if (!subPartsList.isEmpty())
         {
-            for (SubPart s : this.ListSubParts) 
+            for (SubPart s : this.subPartsList) 
             {
                 System.out.println("\nParte " + i + ": " + s.subPart.nmPart + " | Quantidade: " + s.qtd);
                 i++;
