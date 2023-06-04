@@ -38,7 +38,7 @@ public class Part implements IParts
         {
             for (SubPart s : this.subPartsList) 
             {
-                System.out.println("\nParte " + i + ": " + s.subPart.nmPart + " | Quantidade: " + s.qtd);
+                System.out.println("\nParte " + i + ":  ID = " + s.subPart.idPart + " | Nome = " + s.subPart.nmPart + " | Quantidade: " + s.qtd);
                 i++;
             }
         }
